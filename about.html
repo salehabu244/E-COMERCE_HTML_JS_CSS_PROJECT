@@ -1,0 +1,163 @@
+<html>
+<head>
+    <title>Md. Abu Saleh</title>
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(#fff,#fff,#e3e3e3);
+            color:#555;
+        }
+        img {
+            height: 200px;
+            border-radius: 10px;
+            margin: 50px 50px 30px 50px;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.1), 10px 10px 10px rgba(0,0,0,0.1), 10px 20px 15px rgba(0,0,0,0.1), 10px 10px 5px rgba(0,0,0,0.1), inset 1px 1px 2px #fff;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 5px;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.1), 10px 10px 10px rgba(0,0,0,0.1), 10px 20px 15px rgba(0,0,0,0.1), 10px 10px 5px rgba(0,0,0,0.1), inset 1px 1px 2px #fff;
+            padding:20px;
+            border-radius:10px;
+            background:#0094ff;
+            color:white;
+        }
+        h2 {
+            margin: 10px;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.1), 10px 10px 10px rgba(0,0,0,0.1), 10px 20px 15px rgba(0,0,0,0.1), 10px 10px 5px rgba(0,0,0,0.1), inset 1px 1px 2px #fff;
+            padding:20px;
+            text-align:center;
+            border-radius:10px;
+        }
+        a {
+            text-decoration: none;
+            padding: 10px;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.1), 10px 10px 10px rgba(0,0,0,0.1), 10px 20px 15px rgba(0,0,0,0.1), 10px 10px 5px rgba(0,0,0,0.1), inset 1px 1px 2px #fff;
+            padding: 20px 50px;
+            background:#4800ff;
+            color:#fff;
+            margin:10px;
+            border-radius:10px;
+        }
+        .logo img{
+            height:175px;
+            width: 175px;
+            float: letf;
+            display:flex;
+            padding: 5px 0 0 5px;
+        }
+
+        .footer {
+    width: 100%;
+    height: auto;
+    background-color: #e9780e;
+    padding: 10px;
+    text-align: center;
+}
+
+    .footer div {
+        text-align: left;
+        margin-left: 100px;
+    }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f7fb;
+}
+.container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 420px;
+  justify-content: center;
+}
+.container .box {
+  position: relative;
+  height: 160px;
+  width: 160px;
+  border-radius: 12px;
+  border: 2px solid #333;
+}
+.box .image {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("Abu.png");
+}
+.box.hovered {
+  border: 2px dashed #333;
+}
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h1>Drag And Drop Here</h1>
+        <div class="box">
+          <div class="image" draggable="true"></div>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </section>
+    <!--<img src="images/photo.jpg"/>-->
+    <h1>
+        Md. Abu Saleh
+    </h1>
+    <h2>
+        Trainee ID: 1272312<br />
+        Batch ID: CS/PNTL-M/53/01
+    </h2>
+
+    <a href="index.html">Home</a>
+
+    <footer class="footer">
+        <div>
+            <p class="p"><h2 class="con">Contact</h2></p><br />
+            <p class="p"><strong>Phone : </strong>01521489335</p>
+            <p class="p"><strong>Web site : </strong>honeyshop.com</p>
+            <p class="p"><strong>Address : </strong>Mirpur-1, Dhaka.</p>
+        </div>
+
+        <h1>Thanks to visit</h1>
+    </footer>
+    <script>
+        //DOM Elements
+const boxes = document.querySelectorAll(".box"),
+  image = document.querySelector(".image");
+
+//Loop through each boxes element
+boxes.forEach((box) => {
+  //When a draggable element dragged over a box element
+  box.addEventListener("dragover", (e) => {
+    e.preventDefault(); //Prevent default behaviour
+    box.classList.add("hovered");
+  });
+
+  //When a draggable element leaves box element
+  box.addEventListener("dragleave", () => {
+    box.classList.remove("hovered");
+  });
+
+  //When a draggable element is dropped on a box elemen
+  box.addEventListener("drop", () => {
+    box.appendChild(image);
+    box.classList.remove("hovered");
+  });
+});
+
+    </script>
+</body>
+</html>
